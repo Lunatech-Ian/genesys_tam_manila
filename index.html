@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lunatech AI - Genesys Test</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <div class="header">
+    <img src="assets/logo.jpg" class="logo" />
+    <h1>Lunatech AI - Genesys Sandbox Test</h1>
+    <p>Environment: Sandbox</p>
+  </div>
+
+  <div class="card">
+    <h2>Configuration</h2>
+    <select id="userSelect"></select>
+    <button onclick="applyUser()">Apply User</button>
+  </div>
+
+  <div class="card">
+    <h2>Active User</h2>
+    <pre id="activeUser"></pre>
+  </div>
+
+  <div class="card">
+    <h2>Chat Controls</h2>
+    <button onclick="openChat()">Open Chat</button>
+    <button onclick="resetSession()">Reset Session</button>
+  </div>
+
+  <div class="card">
+    <h2>Debug</h2>
+    <pre id="debugLog"></pre>
+  </div>
+
+  <script src="data/users.js"></script>
+  <script src="assets/app.js"></script>
+
+</body>
+</html>
