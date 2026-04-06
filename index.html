@@ -10,40 +10,34 @@
   <header class="topbar">
     <div class="topbar-left">
       <img src="assets/logo.png" class="logo" alt="Lunatech AI logo" />
-      <div class="brand-block">
-        <span class="brand-eyebrow">Lunatech AI</span>
-        <span class="brand-name">Messaging Demo</span>
-      </div>
+      <span class="brand-name">Messaging Demo</span>
     </div>
 
-    <button class="btn primary" onclick="openConfigModal()">Configure</button>
+    <button class="btn btn-primary" onclick="openConfigModal()">Configure</button>
   </header>
 
   <main class="container">
     <section class="hero">
-      <div class="pill">Sandbox Demo Environment</div>
+      <span class="pill">Sandbox Demo Environment</span>
       <h1>Genesys Messaging Demo</h1>
       <p>
-        A simple, polished page for customer-facing demos of web messaging,
-        persona switching, and future personalization scenarios.
+        A simple demo page for web messaging, persona switching, and future personalization scenarios.
       </p>
 
       <div class="actions">
-        <button class="btn primary" onclick="openConfigModal()">Configure</button>
-        <button class="btn dark" onclick="openChat()">Open Chat</button>
-        <button class="btn light" onclick="resetSession()">Reset</button>
+        <button class="btn btn-primary" onclick="openConfigModal()">Configure</button>
+        <button class="btn btn-dark" onclick="openChat()">Open Chat</button>
+        <button class="btn btn-light" onclick="resetSession()">Reset</button>
       </div>
     </section>
 
-    <section class="card main-card">
+    <section class="card">
       <div class="card-header">
         <div>
           <h2>Current Configuration</h2>
-          <p class="card-subtitle">
-            Lightweight configuration for live demos and sandbox validation.
-          </p>
+          <p class="card-subtitle">Use this to prepare the demo before launching chat.</p>
         </div>
-        <span class="status ready">Ready</span>
+        <span class="status">Ready</span>
       </div>
 
       <div class="info-list">
@@ -69,7 +63,7 @@
         <label for="userSelect">Demo Persona</label>
         <div class="persona-actions">
           <select id="userSelect"></select>
-          <button class="btn primary" onclick="applyUser()">Apply User</button>
+          <button class="btn btn-primary" onclick="applyUser()">Apply User</button>
         </div>
       </div>
     </section>
@@ -77,18 +71,12 @@
     <section class="support-grid">
       <div class="card support-card">
         <h3>Messaging Status</h3>
-        <p>
-          UI ready. Messenger can be connected once the sandbox deployment snippet
-          is added.
-        </p>
+        <p>UI ready. Messenger can be connected once the sandbox deployment snippet is added.</p>
       </div>
 
       <div class="card support-card">
         <h3>Demo Notes</h3>
-        <p>
-          Keep the experience minimal for customers. Use configuration only when
-          switching personas.
-        </p>
+        <p>Keep the experience simple for customers. Use configuration only when switching personas.</p>
       </div>
     </section>
 
@@ -122,7 +110,7 @@
           <option value="Customer Test">Customer Test</option>
         </select>
 
-        <button class="btn primary full" onclick="saveConfiguration()">Save</button>
+        <button class="btn btn-primary btn-full" onclick="saveConfiguration()">Save</button>
       </div>
     </div>
   </div>
