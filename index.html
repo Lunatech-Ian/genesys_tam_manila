@@ -7,54 +7,144 @@
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-
   <header class="topbar">
-    <div class="brand-left">
+    <div class="topbar-left">
       <img src="assets/logo.png" class="topbar-logo" alt="Lunatech AI logo">
-      <span class="brand-name">Lunatech AI</span>
+      <div class="topbar-brand">
+        <span class="brand-eyebrow">Lunatech AI</span>
+        <span class="brand-name">Web Messaging Sandbox</span>
+      </div>
     </div>
 
-    <button class="configure-btn" onclick="openConfigModal()">Configure</button>
+    <div class="topbar-actions">
+      <button class="btn btn-primary" onclick="openConfigModal()">Configure</button>
+    </div>
   </header>
 
   <main class="page">
-    <div class="header">
-  <h1> Genesys TAM-MLA Agentic Project</h1>
-  <p>Environment: Sandbox</p>
-</div>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Genesys Sandbox Environment</p>
+        <h1>Genesys TAM-MLA Agentic Project</h1>
+        <p class="hero-subtitle">
+          Web messaging test harness for persona simulation, configuration validation,
+          and future journey orchestration.
+        </p>
 
-    <div class="card">
-      <h2>Configuration</h2>
-      <p><strong>First Name:</strong> <span id="cfgFirstName">-</span></p>
-      <p><strong>Last Name:</strong> <span id="cfgLastName">-</span></p>
-      <p><strong>Organization:</strong> <span id="cfgOrganization">-</span></p>
-      <p><strong>Dummy User:</strong> <span id="cfgDummyUser">-</span></p>
-    </div>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="openConfigModal()">Configure</button>
+          <button class="btn btn-dark" onclick="openChat()">Open Chat</button>
+          <button class="btn btn-light" onclick="resetSession()">Reset Session</button>
+        </div>
 
-    <div class="card">
-      <h2>Dummy User</h2>
-      <select id="userSelect"></select>
-      <button onclick="applyUser()">Apply User</button>
-    </div>
+        <div class="status-row">
+          <span class="status-pill">Sandbox</span>
+          <span class="status-pill">Messaging Test Harness</span>
+          <span class="status-pill">Persona Ready</span>
+        </div>
+      </div>
 
-    <div class="card">
-      <h2>Active User</h2>
-      <pre id="activeUser"></pre>
-    </div>
+      <div class="hero-panel">
+        <div class="hero-panel-card">
+          <p class="mini-label">Environment</p>
+          <h3>Sandbox</h3>
+          <p class="mini-copy">Configured for safe testing and validation.</p>
+        </div>
+        <div class="hero-panel-card">
+          <p class="mini-label">Current Mode</p>
+          <h3>Pre-Integration</h3>
+          <p class="mini-copy">UI and persona workflow active. Messenger not yet connected.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="card">
-      <h2>Chat Controls</h2>
-      <button onclick="openChat()">Open Chat</button>
-      <button onclick="resetSession()">Reset Session</button>
-    </div>
+    <section class="content-grid">
+      <div class="left-column">
+        <div class="card highlight-card">
+          <div class="card-header">
+            <h2>Messenger Configuration</h2>
+            <button class="text-link" onclick="openConfigModal()">Edit</button>
+          </div>
 
-    <div class="card">
-      <h2>Debug</h2>
-      <pre id="debugLog"></pre>
-    </div>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">First Name</span>
+              <span class="info-value" id="cfgFirstName">-</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Last Name</span>
+              <span class="info-value" id="cfgLastName">-</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Organization</span>
+              <span class="info-value" id="cfgOrganization">-</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Dummy User</span>
+              <span class="info-value" id="cfgDummyUser">-</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Test Persona</h2>
+          </div>
+
+          <p class="card-copy">
+            Select a mock user profile to simulate different personalization scenarios.
+          </p>
+
+          <div class="form-row">
+            <select id="userSelect"></select>
+            <button class="btn btn-primary" onclick="applyUser()">Apply User</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Selected Persona</h2>
+          </div>
+          <pre id="activeUser"></pre>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="card">
+          <div class="card-header">
+            <h2>Messaging Controls</h2>
+          </div>
+
+          <p class="card-copy">
+            Use these controls to validate session behavior before and after Messenger integration.
+          </p>
+
+          <div class="control-stack">
+            <button class="btn btn-dark" onclick="openChat()">Open Chat</button>
+            <button class="btn btn-light" onclick="resetSession()">Reset Session</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Activity Log</h2>
+          </div>
+          <pre id="debugLog"></pre>
+        </div>
+
+        <div class="card accent-card">
+          <div class="card-header">
+            <h2>Next Integration Step</h2>
+          </div>
+          <p class="card-copy">
+            Connect a Messenger deployment from your Genesys sandbox, then map configuration
+            and persona data into the messaging context.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- CONFIG MODAL -->
   <div id="configModal" class="modal hidden">
     <div class="modal-backdrop" onclick="closeConfigModal()"></div>
 
@@ -79,7 +169,7 @@
           <option value="Customer Test">Customer Test</option>
         </select>
 
-        <button class="save-btn" onclick="saveConfiguration()">Save Configuration</button>
+        <button class="btn btn-primary btn-full" onclick="saveConfiguration()">Save Configuration</button>
       </div>
     </div>
   </div>
