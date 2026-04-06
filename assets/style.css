@@ -38,12 +38,12 @@ body {
 }
 
 .logo {
-  width: 36px;
-  height: 36px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 8px;
-  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 2px;
 }
 
 .brand-name {
