@@ -3,41 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lunatech AI - Genesys Test</title>
+  <title>Lunatech AI - Genesys TAM-MLA Agentic Project</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
-  <div class="header">
-    <img src="assets/logo.png" class="logo" />
-    <h1>Lunatech AI - Genesys TAM-MLA Agentic Project</h1>
-    <p>Environment: Sandbox</p>
-  </div>
+  <header class="topbar">
+    <div class="brand-left">
+      <img src="assets/logo.png" class="topbar-logo" alt="Lunatech AI logo">
+      <span class="brand-name">Lunatech AI</span>
+    </div>
 
-  <div class="card">
-    <h2>Configuration</h2>
-    <select id="userSelect"></select>
-    <button onclick="applyUser()">Apply User</button>
-  </div>
+    <button class="configure-btn" onclick="openConfigModal()">Configure</button>
+  </header>
 
-  <div class="card">
-    <h2>Active User</h2>
-    <pre id="activeUser"></pre>
-  </div>
+  <main class="page">
+    <div class="header">
+      <img src="assets/logo.png" class="logo" alt="Lunatech AI logo">
+      <h1>Lunatech AI - Genesys TAM-MLA Agentic Project</h1>
+      <p>Environment: Sandbox</p>
+    </div>
 
-  <div class="card">
-    <h2>Chat Controls</h2>
-    <button onclick="openChat()">Open Chat</button>
-    <button onclick="resetSession()">Reset Session</button>
-  </div>
+    <div class="card">
+      <h2>Configuration</h2>
+      <p><strong>First Name:</strong> <span id="cfgFirstName">-</span></p>
+      <p><strong>Last Name:</strong> <span id="cfgLastName">-</span></p>
+      <p><strong>Organization:</strong> <span id="cfgOrganization">-</span></p>
+      <p><strong>Dummy User:</strong> <span id="cfgDummyUser">-</span></p>
+    </div>
 
-  <div class="card">
-    <h2>Debug</h2>
-    <pre id="debugLog"></pre>
+    <div class="card">
+      <h2>Dummy User</h2>
+      <select id="userSelect"></select>
+      <button onclick="applyUser()">Apply User</button>
+    </div>
+
+    <div class="card">
+      <h2>Active User</h2>
+      <pre id="activeUser"></pre>
+    </div>
+
+    <div class="card">
+      <h2>Chat Controls</h2>
+      <button onclick="openChat()">Open Chat</button>
+      <button onclick="resetSession()">Reset Session</button>
+    </div>
+
+    <div class="card">
+      <h2>Debug</h2>
+      <pre id="debugLog"></pre>
+    </div>
+  </main>
+
+  <!-- CONFIG MODAL -->
+  <div id="configModal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeConfigModal()"></div>
+
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h2>Set Messenger Configuration</h2>
+        <button class="close-btn" onclick="closeConfigModal()">×</button>
+      </div>
+
+      <div class="modal-body">
+        <label for="firstNameInput">First Name</label>
+        <input id="firstNameInput" type="text" placeholder="Enter first name">
+
+        <label for="lastNameInput">Last Name</label>
+        <input id="lastNameInput" type="text" placeholder="Enter last name">
+
+        <label for="organizationInput">Organization</label>
+        <select id="organizationInput">
+          <option value="">-- Select Org --</option>
+          <option value="Sandbox">Sandbox</option>
+          <option value="Demo">Demo</option>
+          <option value="Customer Test">Customer Test</option>
+        </select>
+
+        <button class="save-btn" onclick="saveConfiguration()">Save Configuration</button>
+      </div>
+    </div>
   </div>
 
   <script src="data/users.js"></script>
   <script src="assets/app.js"></script>
-
 </body>
 </html>
